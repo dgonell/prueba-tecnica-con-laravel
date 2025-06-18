@@ -3,13 +3,15 @@ services:
     name: laravel-app
     env: php
     buildCommand: |
-      composer install --no-dev
+      composer install --no-dev --optimize-autoloader
+      cp .env.example .env
       php artisan key:generate
-      php artisan migrate --force
+      php artisan migrate --force || true
     startCommand: php -S 0.0.0.0:8000 -t public
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_KEY
         generateValue: true
-    autoDeploy: true
+      - key: DB_CONNECTION
+        value: sqlite
