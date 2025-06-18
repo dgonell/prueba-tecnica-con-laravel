@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: laravel-prueba
+    env: docker
+    plan: free
+    branch: main
+    rootDir: .
