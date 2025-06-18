@@ -20,7 +20,7 @@ Sistema desarrollado con **Laravel 12**, **Inertia.js + React** y **Tailwind CSS
 1. **Clonar el repositorio**
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPO.git
+https://github.com/dgonell/prueba-tecnica-con-laravel.git
 cd TU_REPO
 ```
 
