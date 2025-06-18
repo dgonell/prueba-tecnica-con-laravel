@@ -1,7 +1,15 @@
 services:
   - type: web
-    name: laravel-prueba
-    env: docker
-    plan: free
-    branch: main
-    rootDir: .
+    name: laravel-app
+    env: php
+    buildCommand: |
+      composer install --no-dev
+      php artisan key:generate
+      php artisan migrate --force
+    startCommand: php -S 0.0.0.0:8000 -t public
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+    autoDeploy: true
